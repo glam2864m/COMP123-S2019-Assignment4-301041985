@@ -16,7 +16,7 @@ namespace COMP123_S2019_Assignment4_301041985
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new BMICalculator());
         }
     }
 }
