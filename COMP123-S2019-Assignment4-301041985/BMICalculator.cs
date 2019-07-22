@@ -16,5 +16,17 @@ namespace COMP123_S2019_Assignment4_301041985
         {
             InitializeComponent();
         }
+
+        private void ImperialUnitRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            ImperialTableLayoutPanel.Visible = true;
+            MetricTableLayoutPanel.Visible = false;
+        }
+
+        private void MetricUnitRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            MetricTableLayoutPanel.Visible = true;
+            ImperialTableLayoutPanel.Visible = false;
+        }
     }
 }
