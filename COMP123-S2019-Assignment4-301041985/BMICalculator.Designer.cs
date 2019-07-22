@@ -55,7 +55,7 @@
             this.ImperialTableLayoutPanel.Controls.Add(this.ImperialWeightLabel, 0, 1);
             this.ImperialTableLayoutPanel.Controls.Add(this.ImperialHeightLabel, 0, 0);
             this.ImperialTableLayoutPanel.Controls.Add(this.ImperialHeightTextBox, 1, 0);
-            this.ImperialTableLayoutPanel.Location = new System.Drawing.Point(10, 150);
+            this.ImperialTableLayoutPanel.Location = new System.Drawing.Point(10, 110);
             this.ImperialTableLayoutPanel.Name = "ImperialTableLayoutPanel";
             this.ImperialTableLayoutPanel.RowCount = 3;
             this.ImperialTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -74,6 +74,7 @@
             this.ImperialWeightTextBox.Size = new System.Drawing.Size(134, 55);
             this.ImperialWeightTextBox.TabIndex = 3;
             this.ImperialWeightTextBox.Text = "pounds";
+            this.ImperialWeightTextBox.TextChanged += new System.EventHandler(this.ImperialWeightTextBox_TextChanged);
             // 
             // ImperialWeightLabel
             // 
@@ -111,12 +112,13 @@
             this.ImperialHeightTextBox.Size = new System.Drawing.Size(134, 55);
             this.ImperialHeightTextBox.TabIndex = 1;
             this.ImperialHeightTextBox.Text = "inches";
+            this.ImperialHeightTextBox.TextChanged += new System.EventHandler(this.ImperialHeightTextBox_TextChanged);
             // 
             // ImperialUnitRadioButton
             // 
             this.ImperialUnitRadioButton.AutoSize = true;
             this.ImperialUnitRadioButton.Checked = true;
-            this.ImperialUnitRadioButton.Location = new System.Drawing.Point(35, 26);
+            this.ImperialUnitRadioButton.Location = new System.Drawing.Point(20, 10);
             this.ImperialUnitRadioButton.Name = "ImperialUnitRadioButton";
             this.ImperialUnitRadioButton.Size = new System.Drawing.Size(170, 44);
             this.ImperialUnitRadioButton.TabIndex = 1;
@@ -128,7 +130,7 @@
             // MetricUnitRadioButton
             // 
             this.MetricUnitRadioButton.AutoSize = true;
-            this.MetricUnitRadioButton.Location = new System.Drawing.Point(35, 85);
+            this.MetricUnitRadioButton.Location = new System.Drawing.Point(20, 60);
             this.MetricUnitRadioButton.Name = "MetricUnitRadioButton";
             this.MetricUnitRadioButton.Size = new System.Drawing.Size(142, 44);
             this.MetricUnitRadioButton.TabIndex = 2;
@@ -139,7 +141,7 @@
             // BMIDisplayTextBox
             // 
             this.BMIDisplayTextBox.Enabled = false;
-            this.BMIDisplayTextBox.Location = new System.Drawing.Point(95, 357);
+            this.BMIDisplayTextBox.Location = new System.Drawing.Point(95, 300);
             this.BMIDisplayTextBox.Name = "BMIDisplayTextBox";
             this.BMIDisplayTextBox.Size = new System.Drawing.Size(100, 55);
             this.BMIDisplayTextBox.TabIndex = 3;
@@ -147,12 +149,13 @@
             // CalculateBMIbutton
             // 
             this.CalculateBMIbutton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CalculateBMIbutton.Location = new System.Drawing.Point(12, 276);
+            this.CalculateBMIbutton.Location = new System.Drawing.Point(10, 225);
             this.CalculateBMIbutton.Name = "CalculateBMIbutton";
-            this.CalculateBMIbutton.Size = new System.Drawing.Size(274, 60);
+            this.CalculateBMIbutton.Size = new System.Drawing.Size(280, 50);
             this.CalculateBMIbutton.TabIndex = 4;
             this.CalculateBMIbutton.Text = "Calculate BMI";
             this.CalculateBMIbutton.UseVisualStyleBackColor = false;
+            this.CalculateBMIbutton.Click += new System.EventHandler(this.CalculateBMIbutton_Click);
             // 
             // MetricTableLayoutPanel
             // 
@@ -163,7 +166,7 @@
             this.MetricTableLayoutPanel.Controls.Add(this.MetricWeightLabel, 0, 1);
             this.MetricTableLayoutPanel.Controls.Add(this.MetricHeightLabel, 0, 0);
             this.MetricTableLayoutPanel.Controls.Add(this.MetricHeightTextBox, 1, 0);
-            this.MetricTableLayoutPanel.Location = new System.Drawing.Point(10, 150);
+            this.MetricTableLayoutPanel.Location = new System.Drawing.Point(10, 110);
             this.MetricTableLayoutPanel.Name = "MetricTableLayoutPanel";
             this.MetricTableLayoutPanel.RowCount = 3;
             this.MetricTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -183,6 +186,7 @@
             this.MetricWeightTextBox.Size = new System.Drawing.Size(134, 55);
             this.MetricWeightTextBox.TabIndex = 3;
             this.MetricWeightTextBox.Text = "kilograms";
+            this.MetricWeightTextBox.TextChanged += new System.EventHandler(this.MetricWeightTextBox_TextChanged);
             // 
             // MetricWeightLabel
             // 
@@ -220,6 +224,7 @@
             this.MetricHeightTextBox.Size = new System.Drawing.Size(134, 55);
             this.MetricHeightTextBox.TabIndex = 1;
             this.MetricHeightTextBox.Text = "meters";
+            this.MetricHeightTextBox.TextChanged += new System.EventHandler(this.MetricHeightTextBox_TextChanged);
             // 
             // BMICalculator
             // 
@@ -239,6 +244,7 @@
             this.Name = "BMICalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
+            this.Load += new System.EventHandler(this.BMICalculator_Load);
             this.ImperialTableLayoutPanel.ResumeLayout(false);
             this.ImperialTableLayoutPanel.PerformLayout();
             this.MetricTableLayoutPanel.ResumeLayout(false);
