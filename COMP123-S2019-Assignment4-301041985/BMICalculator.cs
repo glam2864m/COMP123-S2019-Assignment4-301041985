@@ -23,18 +23,20 @@ namespace COMP123_S2019_Assignment4_301041985
 
         private void BMICalculator_Load(object sender, EventArgs e)
         {
-            CalculateBMIbutton.Enabled = false;
+            ClearForm();
         }
 
         //These are the event handlers for switching between Imperial and Metric
         private void ImperialUnitRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            ClearForm();
             ImperialTableLayoutPanel.Visible = true;
             MetricTableLayoutPanel.Visible = false;
         }
 
         private void MetricUnitRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            ClearForm();
             MetricTableLayoutPanel.Visible = true;
             ImperialTableLayoutPanel.Visible = false;
         }
@@ -100,27 +102,33 @@ namespace COMP123_S2019_Assignment4_301041985
             {
                 userHeight = float.Parse(ImperialHeightTextBox.Text);
                 userWeight = float.Parse(ImperialWeightTextBox.Text);
-                userBMI = (userWeight * 703) / (userHeight * userHeight);
-                BMIDisplayTextBox.Text = userBMI.ToString();
-                BMIDisplayTextBox.BackColor = Color.LightSkyBlue;
+                userBMI = (userWeight * 703) / (userHeight * userHeight);                
             }
             else
             {
                 userHeight = float.Parse(MetricHeightTextBox.Text);
                 userWeight = float.Parse(MetricWeightTextBox.Text);
-                userBMI = userWeight / (userHeight * userHeight);
-                BMIDisplayTextBox.Text = userBMI.ToString();
-                BMIDisplayTextBox.BackColor = Color.LightSeaGreen;
+                userBMI = userWeight / (userHeight * userHeight);                
             }
+            userBMI = (float)Math.Round(userBMI, 2);
+            BMIDisplayTextBox.Text = userBMI.ToString();
+            BMIDisplayTextBox.BackColor = Color.LightSeaGreen;
         }
 
         private void ClearForm()
         {
-            ImperialHeightTextBox.Clear();
-            ImperialWeightTextBox.Clear();
-            MetricHeightTextBox.Clear();
-            MetricWeightTextBox.Clear();
+            ImperialHeightTextBox.Text = "inches";
+            ImperialWeightTextBox.Text = "pounds";
+            MetricHeightTextBox.Text = "meters";
+            MetricWeightTextBox.Text = "kilograms";
             CalculateBMIbutton.Enabled = false;
+            BMIDisplayTextBox.Clear();
+            BMIDisplayTextBox.BackColor = Color.White;
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            ClearForm();
         }
     }
 }

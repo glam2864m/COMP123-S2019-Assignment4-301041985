@@ -42,6 +42,8 @@
             this.MetricWeightLabel = new System.Windows.Forms.Label();
             this.MetricHeightLabel = new System.Windows.Forms.Label();
             this.MetricHeightTextBox = new System.Windows.Forms.TextBox();
+            this.ResetButton = new System.Windows.Forms.Button();
+            this.ResultLabel = new System.Windows.Forms.Label();
             this.ImperialTableLayoutPanel.SuspendLayout();
             this.MetricTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -140,10 +142,11 @@
             // 
             // BMIDisplayTextBox
             // 
+            this.BMIDisplayTextBox.BackColor = System.Drawing.Color.White;
             this.BMIDisplayTextBox.Enabled = false;
-            this.BMIDisplayTextBox.Location = new System.Drawing.Point(95, 300);
+            this.BMIDisplayTextBox.Location = new System.Drawing.Point(130, 285);
             this.BMIDisplayTextBox.Name = "BMIDisplayTextBox";
-            this.BMIDisplayTextBox.Size = new System.Drawing.Size(100, 55);
+            this.BMIDisplayTextBox.Size = new System.Drawing.Size(112, 55);
             this.BMIDisplayTextBox.TabIndex = 3;
             // 
             // CalculateBMIbutton
@@ -226,11 +229,32 @@
             this.MetricHeightTextBox.Text = "meters";
             this.MetricHeightTextBox.TextChanged += new System.EventHandler(this.MetricHeightTextBox_TextChanged);
             // 
+            // ResetButton
+            // 
+            this.ResetButton.Location = new System.Drawing.Point(100, 360);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(90, 50);
+            this.ResetButton.TabIndex = 6;
+            this.ResetButton.Text = "Reset";
+            this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            // 
+            // ResultLabel
+            // 
+            this.ResultLabel.AutoSize = true;
+            this.ResultLabel.Location = new System.Drawing.Point(50, 290);
+            this.ResultLabel.Name = "ResultLabel";
+            this.ResultLabel.Size = new System.Drawing.Size(113, 40);
+            this.ResultLabel.TabIndex = 7;
+            this.ResultLabel.Text = "Result";
+            // 
             // BMICalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(21F, 40F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(298, 424);
+            this.Controls.Add(this.ResultLabel);
+            this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.MetricTableLayoutPanel);
             this.Controls.Add(this.CalculateBMIbutton);
             this.Controls.Add(this.BMIDisplayTextBox);
@@ -270,6 +294,8 @@
         private System.Windows.Forms.Label MetricWeightLabel;
         private System.Windows.Forms.Label MetricHeightLabel;
         private System.Windows.Forms.TextBox MetricHeightTextBox;
+        private System.Windows.Forms.Button ResetButton;
+        private System.Windows.Forms.Label ResultLabel;
     }
 }
 
